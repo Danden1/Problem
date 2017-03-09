@@ -8,4 +8,4 @@ chess	:	http://codeup.kr/JudgeOnline/problem.php?id=1514
 
 gitf	:	http://codeup.kr/JudgeOnline/problem.php?id=4066
 
-tile	:	http://codeup.kr/JudgeOnline/problem.php?id=4862
+tie	:	http://codeup.kr/JudgeOnline/problem.php?id=4862
