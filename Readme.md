@@ -16,5 +16,5 @@ ACM : https://www.acmicpc.net/problem/10250
 
 ball : https://www.acmicpc.net/problem/1547
 
-sort : https://www.acmicpc.net/problem/1181
+sort -> sort(0&1) : https://www.acmicpc.net/problem/1181
 
