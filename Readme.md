@@ -18,3 +18,6 @@ ball : https://www.acmicpc.net/problem/1547
 
 sort -> sort(0&1) : https://www.acmicpc.net/problem/1181
 
+math_homework : https://www.acmicpc.net/problem/2870
+
+phone : https://www.acmicpc.net/problem/5052
