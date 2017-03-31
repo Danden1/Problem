@@ -7,36 +7,33 @@
 using namespace std;
 
 int main() {
-	int t,n,check;
-	vector <pair<int, string>>  v(10000);
+	int t, n, check;
+	string tmp;
+	vector <string>  v(10000);
 	scanf("%d", &t);
 
-	for (int i = 0; i < t; i ++) {
+	for (int i = 0; i < t; i++) {
 		scanf("%d", &n);
 		check = 1;
 
 		for (int j = 0; j < n; j++) {
-			cin >> v[j].second;
-			v[j].first = v[j].second.length();
+			cin >> v[j];
 		}
 
 		sort(v.begin(), v.begin() + n);
-		
-		for (int j = 0; j < n; j++) {
-			for (int k = j+1; k < n; k++) {
-				if (strncmp(v[j].second.c_str(), v[k].second.c_str(), v[j].first)==0) {
-					printf("No\n");
-					check = 0;
-					break;
-				}
+
+		for (int j = 0; j < n-1; j++) {
+			tmp = v[j + 1].substr(0, v[j].length());
+			if (v[j] == tmp) {
+				printf("NO\n");
+				check = 0;
+				break;
+
 			}
 			if (!check)
 				break;
 		}
-
 		if (check)
-			printf("Yes\n");
-		
+			printf("YES\n");
 	}
-
 }
