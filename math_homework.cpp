@@ -5,54 +5,64 @@
 #include <string>
 #include <ctype.h>
 using namespace std;
-unsigned long long to(string str, int len) {
-	unsigned long long x = 1, n = 0;
-	for (int i = 1; i <= len; i++) {	
-		n += (str[len-i] - '0')*x;
-		x *= 10;
-	
-	}
-	return n;
-}
+
 int main() {
-	int N, count = 0;
+	int N;
 	string S;
-	string tmp;
-	vector <unsigned long long> v;
-	bool check = false;
+	string tmp = "";
+	vector <pair<int, string>> v;
+	bool check = false, count = false;
+	
 	scanf("%d", &N);
 	tmp = "";
+	
 	for (int i = 0; i < N; i++) {
 		cin >> S;
 
-		for (int k = 0; k < S.length(); k++) {
+		for (int k = 0;k < S.length();k++) {
 			if (isdigit(S[k])) {
-				tmp += S[k];
-				check = true;
-				if (k == S.length() - 1) {
-					count += 1;
-					v.push_back(to(tmp, tmp.length()));
-					tmp = "";
-					check = false;
+				if (S[k] == '0' && (!(check))) {	//앞자리 0인거 구별 하기 위해서.
+					
+					count = true;
+					if (k == S.length() - 1 && !(check)) {
+						v.push_back(make_pair(1,"0"));
+						count = false;
+					}
+					continue;
 				}
 
-			}
+				tmp += S[k];
+				check =	true;
+				count = false;
 
-			else {
-				if (check) {
-					count += 1;
-					v.push_back(to(tmp, tmp.length()));
+				if (k == S.length()-1 && check ) {	//맨 마지막인 경우
+					v.push_back(make_pair(tmp.length(),tmp));
 					tmp = "";
+					check = false;
+					count = false;
+				}
+				
+			}
+			
+			else {
+				if (check) {	//숫자 넣기.
+					v.push_back(make_pair(tmp.length(),tmp));
+					tmp = "";
+				}
+				else if (count && tmp.length() == 0) {	//전부 0인경우
+					v.push_back(make_pair(1,"0"));
+					count = false;
 				}
 				check = false;
 			}
 		}
-
+	
 	}
 
 	sort(v.begin(), v.end());
+
 	for (int i = 0; i < v.size(); i++) {
-		printf("%llu\n", v[i]);
+		cout << v[i].second << '\n';
 	}
 
 }
