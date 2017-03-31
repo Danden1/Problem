@@ -23,3 +23,5 @@ math_homework : https://www.acmicpc.net/problem/2870
 phone : https://www.acmicpc.net/problem/5052
 
 serial_num : https://www.acmicpc.net/problem/1431
+
+9012       : https://www.acmicpc.net/problem/9012
