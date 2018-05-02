@@ -30,8 +30,7 @@ int main(){
 		count += dis1;
 		
 		copy(iter ,de.end(), de_copy.begin());
-		if(dis1!=0)
-			copy(de.begin(), iter, de_copy.begin()+(de.begin()+N-iter));
+		copy(de.begin(), iter, de_copy.begin()+(de.begin()+N-iter));
 			
 		de = de_copy;
 		de.resize(N);
